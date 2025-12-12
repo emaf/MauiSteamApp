@@ -152,6 +152,13 @@ public partial class StorePage : ContentPage
                 DetailPanel.WidthRequest = 160;
                 DetailPanel.IsVisible = true;
                 CarouselBorder.Margin = new Thickness(0, 0, 10, 0);
+                
+                // Force update the GameDetailContent binding when panel becomes visible
+                if (DetailPanel.Content is Controls.GameDetailContent detailContent)
+                {
+                    detailContent.Game = _viewModel.CurrentFeaturedGame;
+                }
+                
                 await DetailPanel.FadeToAsync(1, 400, Easing.CubicOut);
                 _viewModel.IsDetailPanelVisible = true;
             }
@@ -218,6 +225,12 @@ public partial class StorePage : ContentPage
             if (index >= 0)
             {
                 _viewModel.CurrentFeaturedIndex = index;
+                
+                // Update the detail panel content directly if visible
+                if (_isDetailPanelCurrentlyVisible && DetailPanel.Content is Controls.GameDetailContent detailContent)
+                {
+                    detailContent.Game = game;
+                }
             }
         }
     }

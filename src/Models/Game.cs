@@ -13,4 +13,9 @@ public class Game
     public bool IsAvailableNow { get; set; } = true;
     public string PriceDisplay => DiscountPercent > 0 ? $"${Price:F2} USD" : $"${Price:F2} USD";
     public bool HasDiscount => DiscountPercent > 0;
+    
+    // Platform availability
+    public bool HasWindows { get; set; } = true;
+    public bool HasMac { get; set; }
+    public bool HasLinux { get; set; }
 }

@@ -16,7 +16,9 @@ public class GameDataService
                 ImageUrl = "https://cdn.cloudflare.steamstatic.com/steam/apps/1332010/header.jpg",
                 Tags = new List<string> { "Cats", "Adventure", "Cyberpunk", "Atmospheric" },
                 FriendCount = 12,
-                IsAvailableNow = true
+                IsAvailableNow = true,
+                HasWindows = true,
+                HasMac = true
             },
             new Game
             {
@@ -26,7 +28,8 @@ public class GameDataService
                 ImageUrl = "https://cdn.cloudflare.steamstatic.com/steam/apps/1245620/header.jpg",
                 Tags = new List<string> { "RPG", "Dark Fantasy", "Open World", "Souls-like" },
                 FriendCount = 25,
-                IsAvailableNow = true
+                IsAvailableNow = true,
+                HasWindows = true
             },
             new Game
             {
@@ -36,7 +39,9 @@ public class GameDataService
                 ImageUrl = "https://cdn.cloudflare.steamstatic.com/steam/apps/1086940/header.jpg",
                 Tags = new List<string> { "RPG", "D&D", "Party-Based", "Story Rich" },
                 FriendCount = 18,
-                IsAvailableNow = true
+                IsAvailableNow = true,
+                HasWindows = true,
+                HasMac = true
             },
             new Game
             {
@@ -46,7 +51,8 @@ public class GameDataService
                 ImageUrl = "https://cdn.cloudflare.steamstatic.com/steam/apps/1091500/header.jpg",
                 Tags = new List<string> { "Cyberpunk", "RPG", "Open World", "Futuristic" },
                 FriendCount = 23,
-                IsAvailableNow = true
+                IsAvailableNow = true,
+                HasWindows = true
             },
             new Game
             {
@@ -56,7 +62,8 @@ public class GameDataService
                 ImageUrl = "https://cdn.cloudflare.steamstatic.com/steam/apps/1174180/header.jpg",
                 Tags = new List<string> { "Western", "Open World", "Story Rich", "Action" },
                 FriendCount = 19,
-                IsAvailableNow = true
+                IsAvailableNow = true,
+                HasWindows = true
             },
             new Game
             {
@@ -66,7 +73,10 @@ public class GameDataService
                 ImageUrl = "https://cdn.cloudflare.steamstatic.com/steam/apps/1145360/header.jpg",
                 Tags = new List<string> { "Roguelike", "Dungeon Crawler", "Indie", "Action" },
                 FriendCount = 11,
-                IsAvailableNow = true
+                IsAvailableNow = true,
+                HasWindows = true,
+                HasMac = true,
+                HasLinux = true
             }
         };
     }

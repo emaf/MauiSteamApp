@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiStream.Pages.LibraryPage"
+             BackgroundColor="{StaticResource SteamDarkBlue}">
+
+    <Grid RowDefinitions="Auto,*">
+        <!-- Header -->
+        <Grid Grid.Row="0"
+              BackgroundColor="{StaticResource SteamDarkerBlue}"
+              Padding="15,12"
+              ColumnDefinitions="*,Auto">
+            <Label Text="Your Library"
+                   FontSize="22"
+                   FontAttributes="Bold"
+                   TextColor="{StaticResource SteamTextLight}"
+                   VerticalOptions="Center"/>
+            <Label Grid.Column="1"
+                   Text="🔍"
+                   FontSize="20"
+                   VerticalOptions="Center"/>
+        </Grid>
+        
+        <!-- Content -->
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Padding="15" Spacing="15">
+                <!-- Filter tabs -->
+                <HorizontalStackLayout Spacing="15">
+                    <Label Text="All games"
+                           TextColor="{StaticResource SteamOrange}"
+                           FontSize="14"
+                           FontAttributes="Bold"/>
+                    <Label Text="Installed"
+                           TextColor="{StaticResource SteamTextDark}"
+                           FontSize="14"/>
+                    <Label Text="Recent"
+                           TextColor="{StaticResource SteamTextDark}"
+                           FontSize="14"/>
+                </HorizontalStackLayout>
+                
+                <!-- Game list -->
+                <VerticalStackLayout Spacing="10">
+                    <!-- Game item 1 -->
+                    <Border BackgroundColor="{StaticResource SteamCardDark}"
+                            StrokeThickness="0"
+                            Padding="12">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="8"/>
+                        </Border.StrokeShape>
+                        <Grid ColumnDefinitions="60,*,Auto" ColumnSpacing="12">
+                            <Border Grid.Column="0" HeightRequest="60" WidthRequest="60" StrokeThickness="0">
+                                <Border.StrokeShape><RoundRectangle CornerRadius="6"/></Border.StrokeShape>
+                                <Image Source="https://cdn.cloudflare.steamstatic.com/steam/apps/1332010/header.jpg" Aspect="AspectFill"/>
+                            </Border>
+                            <VerticalStackLayout Grid.Column="1" VerticalOptions="Center" Spacing="4">
+                                <Label Text="Stray" TextColor="White" FontSize="16" FontAttributes="Bold"/>
+                                <Label Text="Last played: Yesterday" TextColor="{StaticResource SteamTextDark}" FontSize="12"/>
+                            </VerticalStackLayout>
+                            <Label Grid.Column="2" Text="▶" TextColor="{StaticResource SteamGreen}" FontSize="20" VerticalOptions="Center"/>
+                        </Grid>
+                    </Border>
+                    
+                    <!-- Game item 2 -->
+                    <Border BackgroundColor="{StaticResource SteamCardDark}"
+                            StrokeThickness="0"
+                            Padding="12">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="8"/>
+                        </Border.StrokeShape>
+                        <Grid ColumnDefinitions="60,*,Auto" ColumnSpacing="12">
+                            <Border Grid.Column="0" HeightRequest="60" WidthRequest="60" StrokeThickness="0">
+                                <Border.StrokeShape><RoundRectangle CornerRadius="6"/></Border.StrokeShape>
+                                <Image Source="https://cdn.cloudflare.steamstatic.com/steam/apps/1245620/header.jpg" Aspect="AspectFill"/>
+                            </Border>
+                            <VerticalStackLayout Grid.Column="1" VerticalOptions="Center" Spacing="4">
+                                <Label Text="Elden Ring" TextColor="White" FontSize="16" FontAttributes="Bold"/>
+                                <Label Text="120 hours played" TextColor="{StaticResource SteamTextDark}" FontSize="12"/>
+                            </VerticalStackLayout>
+                            <Label Grid.Column="2" Text="▶" TextColor="{StaticResource SteamGreen}" FontSize="20" VerticalOptions="Center"/>
+                        </Grid>
+                    </Border>
+                    
+                    <!-- Game item 3 -->
+                    <Border BackgroundColor="{StaticResource SteamCardDark}"
+                            StrokeThickness="0"
+                            Padding="12">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="8"/>
+                        </Border.StrokeShape>
+                        <Grid ColumnDefinitions="60,*,Auto" ColumnSpacing="12">
+                            <Border Grid.Column="0" HeightRequest="60" WidthRequest="60" StrokeThickness="0">
+                                <Border.StrokeShape><RoundRectangle CornerRadius="6"/></Border.StrokeShape>
+                                <Image Source="https://cdn.cloudflare.steamstatic.com/steam/apps/1086940/header.jpg" Aspect="AspectFill"/>
+                            </Border>
+                            <VerticalStackLayout Grid.Column="1" VerticalOptions="Center" Spacing="4">
+                                <Label Text="Baldur's Gate 3" TextColor="White" FontSize="16" FontAttributes="Bold"/>
+                                <Label Text="85 hours played" TextColor="{StaticResource SteamTextDark}" FontSize="12"/>
+                            </VerticalStackLayout>
+                            <Label Grid.Column="2" Text="▶" TextColor="{StaticResource SteamGreen}" FontSize="20" VerticalOptions="Center"/>
+                        </Grid>
+                    </Border>
+                    
+                    <!-- Game item 4 -->
+                    <Border BackgroundColor="{StaticResource SteamCardDark}"
+                            StrokeThickness="0"
+                            Padding="12">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="8"/>
+                        </Border.StrokeShape>
+                        <Grid ColumnDefinitions="60,*,Auto" ColumnSpacing="12">
+                            <Border Grid.Column="0" HeightRequest="60" WidthRequest="60" StrokeThickness="0">
+                                <Border.StrokeShape><RoundRectangle CornerRadius="6"/></Border.StrokeShape>
+                                <Image Source="https://cdn.cloudflare.steamstatic.com/steam/apps/292030/header.jpg" Aspect="AspectFill"/>
+                            </Border>
+                            <VerticalStackLayout Grid.Column="1" VerticalOptions="Center" Spacing="4">
+                                <Label Text="The Witcher 3" TextColor="White" FontSize="16" FontAttributes="Bold"/>
+                                <Label Text="200+ hours played" TextColor="{StaticResource SteamTextDark}" FontSize="12"/>
+                            </VerticalStackLayout>
+                            <Label Grid.Column="2" Text="▶" TextColor="{StaticResource SteamGreen}" FontSize="20" VerticalOptions="Center"/>
+                        </Grid>
+                    </Border>
+                </VerticalStackLayout>
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

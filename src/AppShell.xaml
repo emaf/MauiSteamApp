@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="MauiStream.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pages="clr-namespace:MauiStream.Pages"
+    Shell.NavBarIsVisible="False"
+    Shell.TabBarBackgroundColor="{StaticResource SteamDarkerBlue}"
+    Shell.TabBarForegroundColor="{StaticResource SteamOrange}"
+    Shell.TabBarTitleColor="{StaticResource SteamTextLight}"
+    Shell.TabBarUnselectedColor="{StaticResource SteamTextDark}"
+    Shell.FlyoutBackgroundColor="{StaticResource SteamNavBackground}"
+    Shell.FlyoutWidth="280">
+
+    <Shell.FlyoutBehavior>
+        <OnIdiom x:TypeArguments="FlyoutBehavior"
+                 Phone="Disabled"
+                 Tablet="Flyout"
+                 Desktop="Flyout"
+                 Default="Disabled"/>
+    </Shell.FlyoutBehavior>
+
+    <!-- Flyout Header for Tablet/Desktop -->
+    <Shell.FlyoutHeader>
+        <Grid BackgroundColor="{StaticResource SteamDarkerBlue}"
+              HeightRequest="80"
+              Padding="20,15">
+            <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
+                <Label Text="🎮" FontSize="28" VerticalOptions="Center"/>
+                <Label Text="STEAM"
+                       FontSize="24"
+                       FontAttributes="Bold"
+                       TextColor="{StaticResource SteamTextLight}"
+                       VerticalOptions="Center"/>
+            </HorizontalStackLayout>
+        </Grid>
+    </Shell.FlyoutHeader>
+
+    <!-- Flyout Content (for Tablet/Desktop) -->
+    <Shell.FlyoutContent>
+        <Grid RowDefinitions="*,Auto" BackgroundColor="{StaticResource SteamNavBackground}">
+            <!-- Main Navigation -->
+            <VerticalStackLayout Grid.Row="0" Spacing="5" Padding="10,20">
+                <Grid ColumnDefinitions="40,*" Padding="15,12" BackgroundColor="{StaticResource SteamOrange}">
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnStoreClicked"/>
+                    </Grid.GestureRecognizers>
+                    <Label Text="🏪" FontSize="18" VerticalOptions="Center"/>
+                    <Label Grid.Column="1" Text="Game store" TextColor="White" FontSize="16" FontAttributes="Bold" VerticalOptions="Center"/>
+                </Grid>
+                
+                <Grid ColumnDefinitions="40,*" Padding="15,12">
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnLibraryClicked"/>
+                    </Grid.GestureRecognizers>
+                    <Label Text="📚" FontSize="18" VerticalOptions="Center"/>
+                    <Label Grid.Column="1" Text="Library" TextColor="{StaticResource SteamTextLight}" FontSize="16" VerticalOptions="Center"/>
+                </Grid>
+                
+                <Grid ColumnDefinitions="40,*" Padding="15,12">
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnCommunityClicked"/>
+                    </Grid.GestureRecognizers>
+                    <Label Text="👥" FontSize="18" VerticalOptions="Center"/>
+                    <Label Grid.Column="1" Text="Community" TextColor="{StaticResource SteamTextLight}" FontSize="16" VerticalOptions="Center"/>
+                </Grid>
+                
+                <Grid ColumnDefinitions="40,*" Padding="15,12">
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnFriendsClicked"/>
+                    </Grid.GestureRecognizers>
+                    <Label Text="👋" FontSize="18" VerticalOptions="Center"/>
+                    <Label Grid.Column="1" Text="Friends" TextColor="{StaticResource SteamTextLight}" FontSize="16" VerticalOptions="Center"/>
+                </Grid>
+            </VerticalStackLayout>
+            
+            <!-- Bottom Settings/Help -->
+            <VerticalStackLayout Grid.Row="1" Spacing="5" Padding="10,10,10,30" BackgroundColor="{StaticResource SteamDarkerBlue}">
+                <Grid ColumnDefinitions="40,*" Padding="15,12">
+                    <Label Text="⚙️" FontSize="18" VerticalOptions="Center"/>
+                    <Label Grid.Column="1" Text="Settings" TextColor="{StaticResource SteamTextDark}" FontSize="14" VerticalOptions="Center"/>
+                </Grid>
+                
+                <Grid ColumnDefinitions="40,*" Padding="15,12">
+                    <Label Text="❓" FontSize="18" VerticalOptions="Center"/>
+                    <Label Grid.Column="1" Text="Help" TextColor="{StaticResource SteamTextDark}" FontSize="14" VerticalOptions="Center"/>
+                </Grid>
+                
+                <!-- Friend chat and Groups button -->
+                <Border BackgroundColor="{StaticResource SteamCardDark}"
+                        StrokeThickness="0"
+                        Padding="15,12"
+                        Margin="5,15,5,0">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="8"/>
+                    </Border.StrokeShape>
+                    <HorizontalStackLayout Spacing="10">
+                        <Label Text="Friend chat" TextColor="{StaticResource SteamTextLight}" FontSize="14"/>
+                        <Label Text="and Groups" TextColor="{StaticResource SteamTextDark}" FontSize="14"/>
+                        <Label Text="+" TextColor="{StaticResource SteamTextLight}" FontSize="16" HorizontalOptions="EndAndExpand"/>
+                    </HorizontalStackLayout>
+                </Border>
+            </VerticalStackLayout>
+        </Grid>
+    </Shell.FlyoutContent>
+
+    <!-- TabBar for Phone -->
+    <TabBar>
+        <ShellContent
+            Title="Store"
+            ContentTemplate="{DataTemplate pages:StorePage}"
+            Route="StorePage">
+            <ShellContent.Icon>
+                <FontImageSource Glyph="🏪" FontFamily="OpenSansRegular" Size="24"/>
+            </ShellContent.Icon>
+        </ShellContent>
+
+        <ShellContent
+            Title="Library"
+            ContentTemplate="{DataTemplate pages:LibraryPage}"
+            Route="LibraryPage">
+            <ShellContent.Icon>
+                <FontImageSource Glyph="📚" FontFamily="OpenSansRegular" Size="24"/>
+            </ShellContent.Icon>
+        </ShellContent>
+
+        <ShellContent
+            Title="Community"
+            ContentTemplate="{DataTemplate pages:CommunityPage}"
+            Route="CommunityPage">
+            <ShellContent.Icon>
+                <FontImageSource Glyph="👥" FontFamily="OpenSansRegular" Size="24"/>
+            </ShellContent.Icon>
+        </ShellContent>
+
+        <ShellContent
+            Title="Friends"
+            ContentTemplate="{DataTemplate pages:FriendsPage}"
+            Route="FriendsPage">
+            <ShellContent.Icon>
+                <FontImageSource Glyph="👋" FontFamily="OpenSansRegular" Size="24"/>
+            </ShellContent.Icon>
+        </ShellContent>
+    </TabBar>
+
+</Shell>

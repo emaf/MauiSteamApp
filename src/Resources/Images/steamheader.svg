@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 185 55" fill="#c5c3c0">
+  <!-- Steam icon -->
+  <circle cx="27.5" cy="27.5" r="24" fill="#c5c3c0"/>
+  <path d="M27.5 7.5a20 20 0 0 0-20 19.8l10.7 4.4a5.7 5.7 0 0 1 3.2-1 5.8 5.8 0 0 1 .6 0l4.8-6.9v-.1a7.6 7.6 0 1 1 7.6 7.7h-.2l-6.8 4.9a5.8 5.8 0 0 1-11.5 1L6 33.1a20 20 0 1 0 21.5-25.6z" fill="#1b2838"/>
+  <circle cx="34.3" cy="23.8" r="4.8" fill="#1b2838"/>
+  <circle cx="34.3" cy="23.8" r="3" fill="#c5c3c0"/>
+  <circle cx="21.4" cy="36.3" r="3.6" fill="#1b2838"/>
+  <circle cx="21.4" cy="36.3" r="2.2" fill="#c5c3c0"/>
+  
+  <!-- STEAM text -->
+  <text x="60" y="37" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#c5c3c0">STEAM</text>
+  
+  <!-- Trademark TM -->
+  <text x="164" y="22" font-family="Arial, sans-serif" font-size="8" fill="#c5c3c0">™</text>
+</svg>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiStream.Pages.FriendsPage"
+             BackgroundColor="{StaticResource SteamDarkBlue}">
+
+    <Grid RowDefinitions="Auto,*,Auto">
+        <!-- Header -->
+        <Grid Grid.Row="0"
+              BackgroundColor="{StaticResource SteamDarkerBlue}"
+              Padding="15,12"
+              ColumnDefinitions="*,Auto,Auto">
+            <Label Text="Friends &amp; Chat"
+                   FontSize="22"
+                   FontAttributes="Bold"
+                   TextColor="{StaticResource SteamTextLight}"
+                   VerticalOptions="Center"/>
+            <Label Grid.Column="1"
+                   Text="➕"
+                   FontSize="18"
+                   TextColor="{StaticResource SteamTextLight}"
+                   VerticalOptions="Center"
+                   Margin="0,0,15,0"/>
+            <Label Grid.Column="2"
+                   Text="⚙️"
+                   FontSize="18"
+                   VerticalOptions="Center"/>
+        </Grid>
+        
+        <!-- Friends list -->
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Padding="15" Spacing="8">
+                <!-- Online section -->
+                <Label Text="ONLINE — 5" TextColor="{StaticResource SteamTextDark}" FontSize="12" FontAttributes="Bold" Margin="0,0,0,5"/>
+                
+                <!-- Friend 1 - playing -->
+                <Border BackgroundColor="{StaticResource SteamCardDark}" StrokeThickness="0" Padding="12">
+                    <Border.StrokeShape><RoundRectangle CornerRadius="8"/></Border.StrokeShape>
+                    <Grid ColumnDefinitions="50,*,Auto" ColumnSpacing="12">
+                        <Grid Grid.Column="0">
+                            <Border WidthRequest="44" HeightRequest="44" StrokeThickness="2" Stroke="{StaticResource SteamGreen}" BackgroundColor="{StaticResource SteamOrange}">
+                                <Border.StrokeShape><RoundRectangle CornerRadius="22"/></Border.StrokeShape>
+                                <Label Text="👤" FontSize="20" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            </Border>
+                            <Border WidthRequest="14" HeightRequest="14" BackgroundColor="{StaticResource SteamGreen}" StrokeThickness="0" HorizontalOptions="End" VerticalOptions="End">
+                                <Border.StrokeShape><RoundRectangle CornerRadius="7"/></Border.StrokeShape>
+                            </Border>
+                        </Grid>
+                        <VerticalStackLayout Grid.Column="1" VerticalOptions="Center" Spacing="2">
+                            <Label Text="Alex" TextColor="{StaticResource SteamGreen}" FontSize="15" FontAttributes="Bold"/>
+                            <Label Text="Playing Elden Ring" TextColor="{StaticResource SteamGreen}" FontSize="12"/>
+                        </VerticalStackLayout>
+                        <Label Grid.Column="2" Text="💬" FontSize="18" VerticalOptions="Center"/>
+                    </Grid>
+                </Border>
+                
+                <!-- Friend 2 - playing -->
+                <Border BackgroundColor="{StaticResource SteamCardDark}" StrokeThickness="0" Padding="12">
+                    <Border.StrokeShape><RoundRectangle CornerRadius="8"/></Border.StrokeShape>
+                    <Grid ColumnDefinitions="50,*,Auto" ColumnSpacing="12">
+                        <Grid Grid.Column="0">
+                            <Border WidthRequest="44" HeightRequest="44" StrokeThickness="2" Stroke="{StaticResource SteamGreen}" BackgroundColor="#5c7e10">
+                                <Border.StrokeShape><RoundRectangle CornerRadius="22"/></Border.StrokeShape>
+                                <Label Text="👤" FontSize="20" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            </Border>
+                            <Border WidthRequest="14" HeightRequest="14" BackgroundColor="{StaticResource SteamGreen}" StrokeThickness="0" HorizontalOptions="End" VerticalOptions="End">
+                                <Border.StrokeShape><RoundRectangle CornerRadius="7"/></Border.StrokeShape>
+                            </Border>
+                        </Grid>
+                        <VerticalStackLayout Grid.Column="1" VerticalOptions="Center" Spacing="2">
+                            <Label Text="Sarah" TextColor="{StaticResource SteamGreen}" FontSize="15" FontAttributes="Bold"/>
+                            <Label Text="Playing Stray" TextColor="{StaticResource SteamGreen}" FontSize="12"/>
+                        </VerticalStackLayout>
+                        <Label Grid.Column="2" Text="💬" FontSize="18" VerticalOptions="Center"/>
+                    </Grid>
+                </Border>
+                
+                <!-- Friend 3 - online -->
+                <Border BackgroundColor="{StaticResource SteamCardDark}" StrokeThickness="0" Padding="12">
+                    <Border.StrokeShape><RoundRectangle CornerRadius="8"/></Border.StrokeShape>
+                    <Grid ColumnDefinitions="50,*,Auto" ColumnSpacing="12">
+                        <Grid Grid.Column="0">
+                            <Border WidthRequest="44" HeightRequest="44" StrokeThickness="2" Stroke="{StaticResource SteamLightBlue}" BackgroundColor="#4a90d9">
+                                <Border.StrokeShape><RoundRectangle CornerRadius="22"/></Border.StrokeShape>
+                                <Label Text="👤" FontSize="20" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            </Border>
+                            <Border WidthRequest="14" HeightRequest="14" BackgroundColor="{StaticResource SteamLightBlue}" StrokeThickness="0" HorizontalOptions="End" VerticalOptions="End">
+                                <Border.StrokeShape><RoundRectangle CornerRadius="7"/></Border.StrokeShape>
+                            </Border>
+                        </Grid>
+                        <VerticalStackLayout Grid.Column="1" VerticalOptions="Center" Spacing="2">
+                            <Label Text="Mike" TextColor="{StaticResource SteamLightBlue}" FontSize="15" FontAttributes="Bold"/>
+                            <Label Text="Online" TextColor="{StaticResource SteamLightBlue}" FontSize="12"/>
+                        </VerticalStackLayout>
+                        <Label Grid.Column="2" Text="💬" FontSize="18" VerticalOptions="Center"/>
+                    </Grid>
+                </Border>
+                
+                <!-- Offline section -->
+                <Label Text="OFFLINE — 8" TextColor="{StaticResource SteamTextDark}" FontSize="12" FontAttributes="Bold" Margin="0,15,0,5"/>
+                
+                <!-- Friend 4 - offline -->
+                <Border BackgroundColor="{StaticResource SteamCardDark}" StrokeThickness="0" Padding="12">
+                    <Border.StrokeShape><RoundRectangle CornerRadius="8"/></Border.StrokeShape>
+                    <Grid ColumnDefinitions="50,*,Auto" ColumnSpacing="12">
+                        <Grid Grid.Column="0">
+                            <Border WidthRequest="44" HeightRequest="44" StrokeThickness="0" BackgroundColor="#444">
+                                <Border.StrokeShape><RoundRectangle CornerRadius="22"/></Border.StrokeShape>
+                                <Label Text="👤" FontSize="20" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            </Border>
+                        </Grid>
+                        <VerticalStackLayout Grid.Column="1" VerticalOptions="Center" Spacing="2">
+                            <Label Text="Jordan" TextColor="{StaticResource SteamTextDark}" FontSize="15"/>
+                            <Label Text="Last online 2 hours ago" TextColor="{StaticResource SteamTextDark}" FontSize="12"/>
+                        </VerticalStackLayout>
+                    </Grid>
+                </Border>
+                
+                <!-- Friend 5 - offline -->
+                <Border BackgroundColor="{StaticResource SteamCardDark}" StrokeThickness="0" Padding="12">
+                    <Border.StrokeShape><RoundRectangle CornerRadius="8"/></Border.StrokeShape>
+                    <Grid ColumnDefinitions="50,*,Auto" ColumnSpacing="12">
+                        <Grid Grid.Column="0">
+                            <Border WidthRequest="44" HeightRequest="44" StrokeThickness="0" BackgroundColor="#444">
+                                <Border.StrokeShape><RoundRectangle CornerRadius="22"/></Border.StrokeShape>
+                                <Label Text="👤" FontSize="20" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            </Border>
+                        </Grid>
+                        <VerticalStackLayout Grid.Column="1" VerticalOptions="Center" Spacing="2">
+                            <Label Text="Taylor" TextColor="{StaticResource SteamTextDark}" FontSize="15"/>
+                            <Label Text="Last online yesterday" TextColor="{StaticResource SteamTextDark}" FontSize="12"/>
+                        </VerticalStackLayout>
+                    </Grid>
+                </Border>
+            </VerticalStackLayout>
+        </ScrollView>
+        
+        <!-- Bottom chat panel -->
+        <Border Grid.Row="2"
+                BackgroundColor="{StaticResource SteamCardDark}"
+                StrokeThickness="0"
+                Margin="15,10"
+                Padding="15,12">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="10"/>
+            </Border.StrokeShape>
+            <Grid ColumnDefinitions="*,Auto">
+                <VerticalStackLayout Grid.Column="0">
+                    <Label Text="Friend chat" TextColor="{StaticResource SteamTextLight}" FontSize="14"/>
+                    <Label Text="and Groups" TextColor="{StaticResource SteamTextDark}" FontSize="12"/>
+                </VerticalStackLayout>
+                <Border Grid.Column="1" 
+                        BackgroundColor="{StaticResource SteamDarkBlue}" 
+                        WidthRequest="36" 
+                        HeightRequest="36" 
+                        StrokeThickness="0">
+                    <Border.StrokeShape><RoundRectangle CornerRadius="18"/></Border.StrokeShape>
+                    <Label Text="+" TextColor="White" FontSize="20" HorizontalOptions="Center" VerticalOptions="Center"/>
+                </Border>
+            </Grid>
+        </Border>
+    </Grid>
+</ContentPage>

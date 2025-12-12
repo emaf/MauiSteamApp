@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:MauiStream.Controls"
+             x:Class="MauiStream.Controls.GameDetailContent"
+             x:DataType="controls:GameDetailContent">
+
+    <VerticalStackLayout Padding="15" Spacing="16" VerticalOptions="Start">
+        
+        <!-- Large Game Image -->
+        <Border StrokeThickness="0" HeightRequest="180">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="12"/>
+            </Border.StrokeShape>
+            <Image Source="{Binding Game.ImageUrl}" Aspect="AspectFill"/>
+        </Border>
+        
+        <Label Text="{Binding Game.Title}"
+               TextColor="White"
+               FontSize="24"
+               FontAttributes="Bold"/>
+        
+        <Label Text="{Binding Game.Description}"
+               TextColor="{StaticResource SteamTextDark}"
+               FontSize="14"
+               LineBreakMode="WordWrap"/>
+        
+        <!-- Tags -->
+        <HorizontalStackLayout Spacing="8" BindableLayout.ItemsSource="{Binding Game.Tags}">
+            <BindableLayout.ItemTemplate>
+                <DataTemplate x:DataType="x:String">
+                    <Border BackgroundColor="{StaticResource SteamTagBackground}"
+                            StrokeThickness="0"
+                            Padding="12,6">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="14"/>
+                        </Border.StrokeShape>
+                        <Label Text="{Binding .}"
+                               TextColor="White"
+                               FontSize="12"/>
+                    </Border>
+                </DataTemplate>
+            </BindableLayout.ItemTemplate>
+        </HorizontalStackLayout>
+        
+        <Label Text="{Binding Game.Price, StringFormat='${0:F2} USD'}"
+               TextColor="White"
+               FontSize="22"
+               FontAttributes="Bold"
+               Margin="0,8,0,0"/>
+        
+        <Button Text="Add to Cart"
+                BackgroundColor="{StaticResource SteamGreen}"
+                TextColor="White"
+                FontSize="16"
+                FontAttributes="Bold"
+                CornerRadius="6"
+                Padding="16,12"
+                HeightRequest="50"/>
+        
+        <Button Text="Add to Wishlist"
+                BackgroundColor="{StaticResource SteamSearchBackground}"
+                TextColor="{StaticResource SteamTextLight}"
+                FontSize="14"
+                CornerRadius="6"
+                Padding="16,10"
+                HeightRequest="44"/>
+        
+        <!-- Similar Games Section -->
+        <Label Text="More like this"
+               TextColor="{StaticResource SteamTextLight}"
+               FontSize="16"
+               FontAttributes="Bold"
+               Margin="0,12,0,4"/>
+        
+        <Grid ColumnDefinitions="*,*,*" ColumnSpacing="8">
+            <Border Grid.Column="0" HeightRequest="70" StrokeThickness="0">
+                <Border.StrokeShape><RoundRectangle CornerRadius="8"/></Border.StrokeShape>
+                <Image Source="https://cdn.cloudflare.steamstatic.com/steam/apps/1245620/header.jpg" Aspect="AspectFill"/>
+            </Border>
+            <Border Grid.Column="1" HeightRequest="70" StrokeThickness="0">
+                <Border.StrokeShape><RoundRectangle CornerRadius="8"/></Border.StrokeShape>
+                <Image Source="https://cdn.cloudflare.steamstatic.com/steam/apps/1091500/header.jpg" Aspect="AspectFill"/>
+            </Border>
+            <Border Grid.Column="2" HeightRequest="70" StrokeThickness="0">
+                <Border.StrokeShape><RoundRectangle CornerRadius="8"/></Border.StrokeShape>
+                <Image Source="https://cdn.cloudflare.steamstatic.com/steam/apps/1174180/header.jpg" Aspect="AspectFill"/>
+            </Border>
+        </Grid>
+    </VerticalStackLayout>
+
+</ContentView>

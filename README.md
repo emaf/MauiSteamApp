@@ -12,13 +12,13 @@ The app is based on [vibe-wpf](https://github.com/jonathanpeppers/vibe-wpf) by J
 
 ## Screenshots
 
-| iOS | iOS (Game Details) |
-|:---:|:------------------:|
-| ![iOS Main](docs/ios-main.png) | ![iOS Game](docs/ios-game.png) |
+| iOS | iOS (Game Details) | Android |
+|:---:|:------------------:|:-------:|
+| <img src="docs/ios-main.png" width="250"> | <img src="docs/ios-game.png" width="250"> | <img src="docs/android.png" width="250"> |
 
-| iPad | Android |
-|:----:|:-------:|
-| ![iPad](docs/ipad.png) | ![Android](docs/android.png) |
+| iPad |
+|:----:|
+| <img src="docs/ipad.png" width="500"> |
 
 ## Features
 
